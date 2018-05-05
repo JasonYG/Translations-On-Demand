@@ -1,0 +1,2 @@
+# JAMHacks
+Project for JAMHacks
