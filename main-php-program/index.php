@@ -108,11 +108,24 @@ if (isset($_GET['language_selector'])) {
 
 <body onload="setInterval('chat.update()', 1000)">
 
+
+
+
+
   <div id="page-wrap">
 
-    <h2>Live Translation Chatting!</h2>
+		<h2 class= "title">Live Translation Chatting!</h2>
+
+	
+	<div class="title">
     <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+	
+	
+	
 <label for="language_selector">Select the language you want to translate to:</label>
+	</div>
+
+
 <select id="language_selector" name="language_selector" onChange="myFunction(this.value)">
     <option value="ar">Arabic</option>
     <option value="bn">Bengali</option>
@@ -134,20 +147,79 @@ if (isset($_GET['language_selector'])) {
 
 </select>
         <?php 
-            $option = $_POST['language_selector'];
-            fwrite(fopen("selector.txt", 'w'), $_POST['language_selector']);
+            if (isset($_POST['language_selector'])) {
+                $option = $_POST['language_selector'];
+            } else {
+                $option = 'en';
+            }
+            fwrite(fopen("selector.txt", 'w'), $option);
         ?>
     <p id="name-area"></p>
 
     <div id="chat-wrap"><div id="chat-area"></div></div>
 
     <form id="send-message-area">
-      <p1>Your message: </p1>
+      <p1 class="title1">Your message: </p1>
+	  
       <textarea id="sendie" maxlength = '100' ></textarea>
 
     </form>
 
   </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  
+  
+  
+  
+  
+  <div class="w3-container"> 
+	<p class="infotext">info text about program goes here hey hey hey hey ehey eh ye ehey eheye each
+							hey hey ehydfsdgggdfgdfgbdfgdgdfgdgdfgge ehe ye eh ey eheye he ye eh ye eh eyye ehey ehe yye</p>
+  </div>
+  
+  
+  
+  
+  
+  <style>
+  
+  
+  
+.infotext {
+	text-align: center;
+}
+
+body {
+	background-image: url("https://wpcom.files.wordpress.com/2009/12/wpholiday-2560x1600.png");
+	
+}
+
+
+.title {
+	color: white;
+}
+
+
+
+.title1 {
+	color: white;
+	font-size: 20px;
+}
+
+
+
+
+  </style>
+  
+  
 
 </body>
 
