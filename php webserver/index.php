@@ -84,6 +84,10 @@
 
     <h2>Live Translation Chatting!</h2>
     <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+        <select>
+            <option value="">French</option>
+            <option value="">English</option>
+        </select>
     <p id="name-area"></p>
 
     <div id="chat-wrap"><div id="chat-area"></div></div>
