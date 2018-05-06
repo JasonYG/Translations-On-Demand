@@ -117,13 +117,15 @@ if (isset($_GET['language_selector'])) {
 		<h2 class= "title">Translations On Demand</h2>
 
 	
-	<div class="paragraph">
-    <p class = "paragraph" align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
-  </div>
-	
-	<div class="paragraph">
+	 <div class="title">
+      <p class = "paragraph" align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+ </div>
+	<br />
+
+	<div class="title">
 <label class = "paragraph" for="language_selector">Select the language you want to translate to:</label>
 	</div>
+  <br />
 
 
 <select id="language_selector" name="language_selector" onChange="myFunction(this.value)">
@@ -180,8 +182,8 @@ if (isset($_GET['language_selector'])) {
   
   
   
-  <div class="w3-container"> 
-	<p class="infotext">info text about program goes here </p>
+  <div class="github"> 
+	 <p>Click <a href="https://github.com/JasonYG/Translations-On-Demand">here</a> to visit our github!
   </div>
   
   
@@ -197,7 +199,7 @@ if (isset($_GET['language_selector'])) {
 }
 
 body {
-	background-image: url("https://wpcom.files.wordpress.com/2009/12/wpholiday-2560x1600.png");
+	background-image: url(bg.jpg);
 	
 }
 
@@ -209,11 +211,11 @@ body {
   display: -ms-flex;
   display: flex;
   background: #ffffff;
-  box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.075);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.75);
   height: 3.5em;
-  left: -3em;
+  left: -1em;
   line-height: 3em;
-  padding: 0 3em;
+  padding: 0 1em;
   position: relative;
   top: 0;
   width: 100%;
@@ -258,7 +260,7 @@ body {
   <!--<div class="github">-->
   
   
-	<p>Click <a href="https://github.com/JasonYG/Translations-On-Demand">here</a> to visit our github!
+
 	
 	
   <!--</div>-->

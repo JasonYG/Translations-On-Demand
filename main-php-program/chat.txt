@@ -147,3 +147,7 @@
 <span>Raymond Qu</span>你好
 <span>Raymond Qu</span>我喜欢人们
 <span>Guest</span>我喜欢奶酪和人交谈
+<span>Guest</span>你好
+<span>Guest</span>我
+<span>Guest</span>quoi de neuf
+<span>Guest</span>مرحبا
