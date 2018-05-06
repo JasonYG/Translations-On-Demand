@@ -26,6 +26,5 @@ $translation = $translate->translate($translated_text, [
 
 # Write the translated text to the chat
 fwrite(fopen('translated.txt', 'w'), $translation['text']);
-return $translation['text'];
 }
 ?>
