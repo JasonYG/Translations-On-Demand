@@ -1,36 +1,31 @@
 <?php
-	# Includes the autoloader for libraries installed with composer
-	require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
-	# Imports the Google Cloud client library
-	use Google\Cloud\Translate\TranslateClient;
+# Imports the Google Cloud client library
+use Google\Cloud\Translate\TranslateClient;
+function translate() {
+# Your Google Cloud Platform project ID
+$projectId = 'translate-chatbo-1525555964305';
 
-	# Your Google Cloud Platform project ID
-	$projectId = 'translate-chatbo-1525555964305';
+# Instantiates a client
+$translate = new TranslateClient([
+    'projectId' => $projectId
+]);
 
-	# Instantiates a client
-	$translate = new TranslateClient([
-	    'projectId' => $projectId
-	]);
+# The target language
+$target = 'fr';
 
-	# Read from file, text to be translated
-	$to_translate = fopen("chat.txt", "r");
-	$text = fgets($to_translate);
-	fclose($to_translate);
+$to_translate_file = fopen('to_translate.txt', 'r') or die("unable to open file");
+$translated_text = fgets($to_translate_file);
+fclose($to_translate_file);
 
-	# The target language
-	$target = 'fr';
+# Translates some text into Russian
+$translation = $translate->translate($translated_text, [
+    'target' => $target
+]);
 
-	# Translates some text into Russian
-	$translation = $translate->translate($text, [
-	    'target' => $target
-	]);
-
-	# Write the translated text to the chat
-	$to_translate = fopen("chat.txt", "w");
-	fwrite($to_translate, $translation['text']);
-
-	echo 'Text: ' . $text . '
-	Translation: ' . $translation['text'];
-
+# Write the translated text to the chat
+fwrite(fopen('translated.txt', 'w'), $translation['text']);
+return $translation['text'];
+}
 ?>

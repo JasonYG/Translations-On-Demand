@@ -9,6 +9,10 @@
     
     <link rel="stylesheet" href="style.css" type="text/css" />
     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="chat.js"></script>
     <script type="text/javascript">
@@ -17,23 +21,23 @@
         var name = prompt("Enter your chat name:", "Guest");
         
         // default name is 'Guest'
-    	if (!name || name === ' ') {
-    	   name = "Guest";	
-    	}
-    	
-    	// strip tags
-    	name = name.replace(/(<([^>]+)>)/ig,"");
-    	
-    	// display name on page
-    	$("#name-area").html("You are: <span>" + name + "</span>");
-    	
-    	// kick off chat
+        if (!name || name === ' ') {
+           name = "Guest";  
+        }
+        
+        // strip tags
+        name = name.replace(/(<([^>]+)>)/ig,"");
+        
+        // display name on page
+        $("#name-area").html("You are: <span>" + name + "</span>");
+        
+        // kick off chat
         var chat =  new Chat();
-    	$(function() {
-    	
-    		 chat.getState(); 
-    		 
-    		 // watch textarea for key presses
+        $(function() {
+            <?php include 'translate.php'; translate();?>
+             chat.getState(); 
+             
+             // watch textarea for key presses
              $("#sendie").keydown(function(event) {  
              
                  var key = event.which;  
@@ -49,54 +53,51 @@
                          event.preventDefault();  
                      }  
                   }  
-    		 																																																});
-    		 // watch textarea for release of key press
-    		 $('#sendie').keyup(function(e) {	
-    		 					 
-    			  if (e.keyCode == 13) { 
-    			  
+                                                                                                                                                                                                            });
+             // watch textarea for release of key press
+             $('#sendie').keyup(function(e) {   
+                  if (e.keyCode == 13) { 
                     var text = $(this).val();
-    				var maxLength = $(this).attr("maxlength");  
+                    var maxLength = $(this).attr("maxlength");  
                     var length = text.length; 
                      
                     // send 
                     if (length <= maxLength + 1) { 
-
-    			        chat.send(text, name);
-
-    			        $(this).val("");
-    			        
+                        chat.send(text, name);
+                        $(this).val("");
+                        
                     } else {
+                        
+                        $(this).val(text.substring(0, maxLength));
+                        
+                    }   
                     
-    					$(this).val(text.substring(0, maxLength));
-    					
-    				}	
-    				
-    				
-    			  }
+                    
+                  }
              });
             
-    	});
+        });
     </script>
 
 </head>
 
 <body onload="setInterval('chat.update()', 1000)">
 
-    <div id="page-wrap">
-    
-        <h2>Translate chat</h2>
-        <p>By: Aryan, Raymond, Eric, Jason</p>
-        <p id="name-area"></p>
-        
-        <div id="chat-wrap"><div id="chat-area"></div></div>
-        
-        <form id="send-message-area">
-            <p>Your message: </p>
-            <textarea id="sendie" maxlength = '100' ></textarea>
-        </form>
-    
-    </div>
+  <div id="page-wrap">
+
+    <h2>Live Translation Chatting!</h2>
+    <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+    <p id="name-area"></p>
+
+    <div id="chat-wrap"><div id="chat-area"></div></div>
+
+    <form id="send-message-area">
+      <p1>Your message: </p1>
+      <textarea id="sendie" maxlength = '100' ></textarea>
+
+    </form>
+
+  </div>
 
 </body>
 
