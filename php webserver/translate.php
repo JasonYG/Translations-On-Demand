@@ -1,5 +1,4 @@
 <?php
-function translate() {
 	# Includes the autoloader for libraries installed with composer
 	require __DIR__ . '/vendor/autoload.php';
 
@@ -33,5 +32,5 @@ function translate() {
 
 	echo 'Text: ' . $text . '
 	Translation: ' . $translation['text'];
-}
+
 ?>

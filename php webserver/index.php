@@ -61,8 +61,9 @@
                      
                     // send 
                     if (length <= maxLength + 1) { 
-                     
-    			        chat.send(text, name);	
+
+    			        chat.send(text, name);
+
     			        $(this).val("");
     			        
                     } else {

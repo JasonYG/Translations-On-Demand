@@ -1,4 +1,7 @@
 <?php
+    use Google\Cloud\Translate\TranslateClient;
+    $projectId = 'translate-chatbo-1525555964305';
+
 
     $function = $_POST['function'];
     
@@ -48,9 +51,22 @@
 			 if(preg_match($reg_exUrl, $message, $url)) {
        			$message = preg_replace($reg_exUrl, '<a href="'.$url[0].'" target="_blank">'.$url[0].'</a>', $message);
 				} 
-			 
-        	
-        	 fwrite(fopen('chat.txt', 'a'), "<span>". $nickname . "</span>" . $message = str_replace("\n", " ", $message) . "\n"); 
+             //use Google\Cloud\Translate\TranslateClient;
+            // $projectId = 'translate-chatbo-1525555964305';
+         fwrite(fopen('chat.txt', 'a'), "<span>". $nickname . "</span>" . "wow\n");
+         $translate = new TranslateClient([
+            'projectId' => $projectId
+         ]);
+            # Read from file, text to be translated
+         $to_translate = fopen("chat.txt", "r");
+         $text = fgets($to_translate);
+         fclose($to_translate);
+             //fwrite(fopen('toTranslate.txt', "w"), $message);
+
+             
+
+             
+             
 		 }
         	 break;
     	
