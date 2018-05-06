@@ -9,6 +9,10 @@
     
     <link rel="stylesheet" href="style.css" type="text/css" />
     
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="chat.js"></script>
     <script type="text/javascript">
@@ -81,22 +85,23 @@
 
 </head>
 
-<body onload="setInterval('chat.update()', 1000)">
+<body>
 
-    <div id="page-wrap">
-    
-        <h2>Translate chat</h2>
-        <p>By: Aryan, Raymond, Eric, Jason</p>
-        <p id="name-area"></p>
-        
-        <div id="chat-wrap"><div id="chat-area"></div></div>
-        
-        <form id="send-message-area">
-            <p>Your message: </p>
-            <textarea id="sendie" maxlength = '100' ></textarea>
-        </form>
-    
-    </div>
+  <div id="page-wrap">
+
+    <h2>Live Translation Chatting!</h2>
+    <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+    <p id="name-area"></p>
+
+    <div id="chat-wrap"><div id="chat-area"></div></div>
+
+    <form id="send-message-area">
+      <p1>Your message: </p1>
+      <textarea id="sendie" maxlength = '100' ></textarea>
+
+    </form>
+
+  </div>
 
 </body>
 
