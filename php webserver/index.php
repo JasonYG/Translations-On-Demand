@@ -112,7 +112,7 @@ if (isset($_GET['language_selector'])) {
 
     <h2>Live Translation Chatting!</h2>
     <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
-<label for="language_selector">Select the language you understand:</label>
+<label for="language_selector">Select the language you want to translate to:</label>
 <select id="language_selector" name="language_selector" onChange="myFunction(this.value)">
     <option value="ar">Arabic</option>
     <option value="bn">Bengali</option>
