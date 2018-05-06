@@ -1,3 +1,12 @@
+<?php
+if (isset($_GET['language_selector'])) {
+
+    $language = $_GET['language_selector'];
+    fwrite(fopen("language.txt", 'w'), $language); 
+    exit;
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -74,6 +83,25 @@
              });
             
         });
+    function myFunction(value)
+{
+    if(value!="All")
+    {
+        $.ajax(
+        {
+            type: "GET",
+            url: '<?php echo $_SERVER['PHP_SELF']; ?>',
+            data: { language_selector: value},
+            success: function(data) {
+                $('#resultDiv').html(data);
+        }
+    });
+    }
+    else
+    {
+        $('#resultDiv').html("Please select a value.");
+    }
+}
     </script>
 
 </head>
@@ -84,10 +112,31 @@
 
     <h2>Live Translation Chatting!</h2>
     <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
-        <select>
-            <option value="">French</option>
-            <option value="">English</option>
-        </select>
+<label for="language_selector">Select the language you understand:</label>
+<select id="language_selector" name="language_selector" onChange="myFunction(this.value)">
+    <option value="ar">Arabic</option>
+    <option value="bn">Bengali</option>
+    <option value="zh-CN">Chinese (Simplified)</option>
+    <option value="zh-tw">Chinese (Traditional)</option>
+    <option value="nl">Dutch</option>
+    <option value="en">English</option>
+    <option value="fr">French</option>
+    <option value="hi">Hindi</option>
+    <option value="it">Italian</option>
+    <option value="ja">Japanese</option>
+    <option value="ko">Korean</option>
+    <option value="la">Latin</option>
+    <option value="pt">Portuguese</option>
+    <option value="pa">Punjabi</option>
+    <option value="ru">Russian</option>
+    <option value="sv">Swedish</option>
+    <option value="vi">Viewnamese</option>
+
+</select>
+        <?php 
+            $option = $_POST['language_selector'];
+            fwrite(fopen("selector.txt", 'w'), $_POST['language_selector']);
+        ?>
     <p id="name-area"></p>
 
     <div id="chat-wrap"><div id="chat-area"></div></div>
