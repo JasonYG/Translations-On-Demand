@@ -1,16 +1,8 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
 
-# Imports the Google Cloud client library
-use Google\Cloud\Translate\TranslateClient;
+
 function translate() {
-# Your Google Cloud Platform project ID
-$projectId = 'translate-chatbo-1525555964305';
-
-# Instantiates a client
-$translate = new TranslateClient([
-    'projectId' => $projectId
-]);
+$apiKey = 'AIzaSyCABvyqIG-VDjACqOu50_yIBciDHSflNqQ';
 
 # The target language
 $target = 'fr';
@@ -19,12 +11,15 @@ $to_translate_file = fopen('to_translate.txt', 'r') or die("unable to open file"
 $translated_text = fgets($to_translate_file);
 fclose($to_translate_file);
 
-# Translates some text into Russian
-$translation = $translate->translate($translated_text, [
-    'target' => $target
-]);
+$url = 'https://www.googleapis.com/language/translate/v2?key=' . $apiKey . '&q=' . rawurlencode($translated_text) . '&source=en&target=fr';
+
+$handle = curl_init($url);
+curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+$response = curl_exec($handle);                 
+$responseDecoded = json_decode($response, true);
+curl_close($handle);
 
 # Write the translated text to the chat
-fwrite(fopen('translated.txt', 'w'), $translation['text']);
+fwrite(fopen('translated.txt', 'w'), $responseDecoded['data']['translations'][0]['translatedText']);
 }
 ?>

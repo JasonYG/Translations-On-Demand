@@ -78,7 +78,7 @@
 
 </head>
 
-<body>
+<body onload="setInterval('chat.update()', 1000)">
 
   <div id="page-wrap">
 
