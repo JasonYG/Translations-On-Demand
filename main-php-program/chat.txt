@@ -142,3 +142,8 @@
 <span>Guest</span>clair
 <span>Guest</span>allons dehors
 <span>Guest</span>let&#39;s go outside
+<span>Raymond Qu</span>I like mEMeMEMEneneene
+
+<span>Raymond Qu</span>你好
+<span>Raymond Qu</span>我喜欢人们
+<span>Guest</span>我喜欢奶酪和人交谈

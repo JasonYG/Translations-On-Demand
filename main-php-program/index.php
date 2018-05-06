@@ -14,7 +14,7 @@ if (isset($_GET['language_selector'])) {
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Chat</title>
+    <title>Real-time Translation Messaging</title>
     
     <link rel="stylesheet" href="style.css" type="text/css" />
     
@@ -114,15 +114,15 @@ if (isset($_GET['language_selector'])) {
 
   <div id="page-wrap">
 
-		<h2 class= "title">Live Translation Chatting!</h2>
+		<h2 class= "title">Translations On Demand</h2>
 
 	
-	<div class="title">
-    <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+	<div class="paragraph">
+    <p class = "paragraph" align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+  </div>
 	
-	
-	
-<label for="language_selector">Select the language you want to translate to:</label>
+	<div class="paragraph">
+<label class = "paragraph" for="language_selector">Select the language you want to translate to:</label>
 	</div>
 
 
@@ -203,8 +203,41 @@ body {
 }
 
 
-.title {
-	color: white;
+.title{
+	color: black;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.075);
+  height: 3.5em;
+  left: -3em;
+  line-height: 3em;
+  padding: 0 3em;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 10001;
+  }
+}
+.paragraph{
+  color: black;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.075);
+  height: 3.5em;
+  left: -3em;
+  line-height: 3em;
+  padding: 0 3em;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 10001;
+  }
 }
 
 
