@@ -14,7 +14,7 @@ if (isset($_GET['language_selector'])) {
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Chat</title>
+    <title>Real-time Translation Messaging</title>
     
     <link rel="stylesheet" href="style.css" type="text/css" />
     
@@ -108,11 +108,24 @@ if (isset($_GET['language_selector'])) {
 
 <body onload="setInterval('chat.update()', 1000)">
 
+
+
+
+
   <div id="page-wrap">
 
-    <h2>Live Translation Chatting!</h2>
-    <p align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
-<label for="language_selector">Select the language you want to translate to:</label>
+		<h2 class= "title">Translations On Demand</h2>
+
+	
+	<div class="paragraph">
+    <p class = "paragraph" align = "center">Built by Aryan, Raymond, Eric, Jason with PHP.</p>
+  </div>
+	
+	<div class="paragraph">
+<label class = "paragraph" for="language_selector">Select the language you want to translate to:</label>
+	</div>
+
+
 <select id="language_selector" name="language_selector" onChange="myFunction(this.value)">
     <option value="ar">Arabic</option>
     <option value="bn">Bengali</option>
@@ -134,20 +147,121 @@ if (isset($_GET['language_selector'])) {
 
 </select>
         <?php 
-            $option = $_POST['language_selector'];
-            fwrite(fopen("selector.txt", 'w'), $_POST['language_selector']);
+            if (isset($_POST['language_selector'])) {
+                $option = $_POST['language_selector'];
+            } else {
+                $option = 'en';
+            }
+            fwrite(fopen("selector.txt", 'w'), $option);
         ?>
     <p id="name-area"></p>
 
     <div id="chat-wrap"><div id="chat-area"></div></div>
 
     <form id="send-message-area">
-      <p1>Your message: </p1>
+      <p1 class="title1">Your message: </p1>
+	  
       <textarea id="sendie" maxlength = '100' ></textarea>
 
     </form>
 
   </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  
+  
+  
+  
+  
+  <div class="w3-container"> 
+	<p class="infotext">info text about program goes here </p>
+  </div>
+  
+  
+  
+  
+  
+  <style>
+  
+  
+  
+.infotext {
+	text-align: center;
+}
+
+body {
+	background-image: url("https://wpcom.files.wordpress.com/2009/12/wpholiday-2560x1600.png");
+	
+}
+
+
+.title{
+	color: black;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.075);
+  height: 3.5em;
+  left: -3em;
+  line-height: 3em;
+  padding: 0 3em;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 10001;
+  }
+}
+.paragraph{
+  color: black;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.075);
+  height: 3.5em;
+  left: -3em;
+  line-height: 3em;
+  padding: 0 3em;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 10001;
+  }
+}
+
+
+
+.title1 {
+	color: white;
+	font-size: 20px;
+}
+
+.github {
+	text-align: center;
+}
+
+
+  </style>
+  
+  
+  
+  <!--<div class="github">-->
+  
+  
+	<p>Click <a href="https://github.com/JasonYG/Translations-On-Demand">here</a> to visit our github!
+	
+	
+  <!--</div>-->
 
 </body>
 

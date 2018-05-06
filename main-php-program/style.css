@@ -4,9 +4,9 @@
 }
 body {
 	font: 12px "Roboto", Sans-Serif;
-	background-image: url("bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+	background-image: url("https://wpcom.files.wordpress.com/2009/12/wpholiday-2560x1600.png");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 h2 {
 	color: #000000;
