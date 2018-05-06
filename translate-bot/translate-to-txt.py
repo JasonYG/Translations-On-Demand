@@ -25,4 +25,4 @@ translation = translate_client.translate(
 print(u'Text: {}'.format(text))
 print(u'Translation: {}'.format(translation['translatedText']))
 out_text = (u'Translation: {}'.format(translation['translatedText']))
-output_file.write('out_text')
+output_file.write(out_text)
