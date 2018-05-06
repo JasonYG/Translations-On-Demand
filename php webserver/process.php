@@ -54,7 +54,10 @@
          fwrite(fopen('to_translate.txt', 'w'), $message);
         include 'translate.php';
         translate();
-        fwrite(fopen('chat.txt', 'a'), "<span>". $nickname . "</span>" . "no");
+        $translated_text = fopen('translated.txt', 'r');
+        fwrite(fopen('chat.txt', 'a'), "<span>". $nickname . "</span>" . fgets($translated_text));
+        fwrite(fopen('chat.txt', 'a'), "\n");
+
          }
              break;
          
