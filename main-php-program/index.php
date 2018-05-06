@@ -181,8 +181,7 @@ if (isset($_GET['language_selector'])) {
   
   
   <div class="w3-container"> 
-	<p class="infotext">info text about program goes here hey hey hey hey ehey eh ye ehey eheye each
-							hey hey ehydfsdgggdfgdfgbdfgdgdfgdgdfgge ehe ye eh ey eheye he ye eh ye eh eyye ehey ehe yye</p>
+	<p class="infotext">info text about program goes here </p>
   </div>
   
   
@@ -247,12 +246,22 @@ body {
 	font-size: 20px;
 }
 
-
+.github {
+	text-align: center;
+}
 
 
   </style>
   
   
+  
+  <!--<div class="github">-->
+  
+  
+	<p>Click <a href="https://github.com/JasonYG/Translations-On-Demand">here</a> to visit our github!
+	
+	
+  <!--</div>-->
 
 </body>
 
